@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="row" style="margin-top: 70px;">
+        <div class="main d-flex" style="justify-content: center; flex-direction: column; align-items: center;">
+            <div class="title">
+                <h2 class="text-center">Compare Two Faces From Im ages</h2>
+                <p class="text-center">A Free Tool to Compare Faces From Two Images with the Use of Machine Learning Algorithems...</p>
+            </div>
+            <div class="upload-image card col-lg-8 col-md-10 col-12 p-3">
+                <!-- <h3>Choose Images to Compare</h3> -->
+                <form action="{% url 'compare-images' %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <h4>First Image</h4>
+                    <input type="file" class="form-control" name="img1" id="img1">
+                    <br>
+                    <h4>Second Image</h4>
+                    <input type="file" class="form-control" name="img2" id="img2">
+                    <br>
+                    <div class="button-div d-flex" style="justify-content: right;">
+                        <button type="submit" class="btn btn-secondary">Compare</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

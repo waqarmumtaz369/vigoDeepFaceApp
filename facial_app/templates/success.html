@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="row d-flex flex-lg-column flex-md-column flex-sm-row">
+        <div class="d-flex" style="justify-content: space-evenly; margin-bottom: 40px;">
+            <h2 class="text-center">Facial Attribute Analysis</h2>
+            <a href="{% url 'attribute-analysis' %}" class="btn btn-secondary">Check Again</a>
+        </div>
+        <div class="main d-flex" style="justify-content: center; align-items: center;">
+            <img src="{{ original_image_path }}" class="img-fluid col-lg-4 col-md-8 col-sm-12 me-3"
+                style="border-radius: 14px;" alt="Original Image">
+            <ul class="list-group col-lg-2 me-3">
+                <li class="list-group-item">
+                    <h4 style="display: inline;">Emotions:</h4>
+                </li>
+                <li class="list-group-item">
+                    <h4 style="display: inline;">Age:</h4>
+                </li>
+                <li class="list-group-item">
+                    <h4 style="display: inline;">Gender:</h4>
+                </li>
+                <li class="list-group-item">
+                    <h4 style="display: inline;">Ethnicity:</h4>
+                </li>
+            </ul>
+
+            <ul class="list-group col-lg-2">
+                <li class="list-group-item">
+                    <h5 style="display: inline;">{{ dominant_emotion | title }}</h5>
+                </li>
+                <li class="list-group-item">
+                    <h5 style="display: inline;">{{ age }}</h5>
+                </li>
+                <li class="list-group-item">
+                    <h5 style="display: inline;">{{ gender }}</h5>
+                </li>
+                <li class="list-group-item">
+                    <h5 style="display: inline;">{{ race }}</h5>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock content %}

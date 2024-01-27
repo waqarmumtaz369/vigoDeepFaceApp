@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row mb-5">
+        <div class="d-flex" style="justify-content: center; align-items: center;">
+            <div>
+                <h2 class="text-start">Here is the One Selected Image</h2>
+                <p>Unlock a new era of precision with our advanced machine learning model, seamlessly matching faces
+                    across diverse images for enhanced security and authentication.</p>
+            </div>
+            <img src="{{ user_image_path }}" class="img-fluid col-lg-4 col-md-6 col-sm-10 ms-5"
+                style="border-radius: 15px;" alt="User Image">
+        </div>
+        <br>
+        <div class="row mt-4">
+            <h2>Matched Images</h2>
+            <p>Here are Some Matched Images with the Above Selected Image, </p>
+            {% if images_found %}
+            <div class="main d-flex flex-wrap" style="justify-content: center;">
+                {% for matched_image in matched_images %}
+                <img src="{{ matched_image }}" alt="Matched Image - {{forloop.counter}}"
+                    class="img-fluid col-lg-4 col-md-6 col-sm-12 me-2 mb-2" style="border-radius: 15px;">
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="d-flex mt-3" style="justify-content: center; align-items: center;">
+                <p>There are <b>No</b> matched Images Found...</p>
+            </div>
+            {% endif %}
+        </div>
+
+    </div>
+</div>
+
+{% endblock content %}

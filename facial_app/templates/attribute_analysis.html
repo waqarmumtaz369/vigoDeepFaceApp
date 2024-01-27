@@ -1,0 +1,32 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="container">
+    <div class="row" style="margin-top: 110px;">
+        <div class="main d-flex" style="flex-direction: column; justify-content: center; align-items: center">
+            <div class="title">
+                <h2 class="text-center">Explore Feature Extraction of Your Face</h2>
+                <p class="text-center">WE USE MACHINE LEARNING ALGORITHEMS TO EXTRACT FACIAL ATTRIBUTES</p>
+            </div>
+            <div class="upload_image_card card p-4 col-lg-8 col-md-8 col-sm-12">
+                {% if message %}
+                <div class="alert alert-dismissible fade show" style="background-color: #d5f0c1" role="alert">
+                    {{message}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endif %}
+                <h2>Upload an Image</h2>
+                <form action="" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="file" name="image" id="image" class="form-control" required>
+                    <br>
+                    <div class="d-flex" style="justify-content: right;">
+                        <button type="submit" class="btn btn-secondary">Upload Image <i
+                                class="fa-solid fa-upload"></i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

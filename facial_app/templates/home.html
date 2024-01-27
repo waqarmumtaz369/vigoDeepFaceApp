@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="row" style="margin-top: 100px;">
+        <div class="d-flex flex-column" style="justify-content: flex-start; align-items: center;">
+            <div class="mb-4">
+                <h1 class="text-center">Explore Machine Learning Algorithems For Facial Expressions</h1>
+                <p class="text-center">Deep Face</p>
+            </div>
+
+            <div class="row">
+
+                <!-- Facial Attribute Analysis -->
+                <a href="{% url 'attribute-analysis' %}" class="col-lg-4 col-md-6 col-sm-12 mb-3" style="text-decoration: none;">
+                    <div class="card border-light mx-3" style="max-width: 20rem;">
+                        <div class="card-header">Facial Attribute</div>
+                        <div class="card-body">
+                            <h4 class="card-title">Demographic Attribute</h4>
+                            <p class="card-text">Free Tool To Find Out Facial Attributes</p>
+                        </div>
+                    </div>
+                </a>
+
+
+                <!-- Face Comparison -->
+                <a href="{% url 'compare-images' %}" class="col-lg-4 col-md-6 col-sm-12 mb-3" style="text-decoration: none;">
+                    <div class="card border-light mx-3" style="max-width: 20rem;">
+                        <div class="card-header">Face Verification</div>
+                        <div class="card-body">
+                            <h4 class="card-title">Compare Faces From Images</h4>
+                            <p class="card-text">This Tool To Compare Faces From Images</p>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Face Searching In DB Card -->
+                <a href="{% url 'face-verification' %}" class="col-lg-4 col-md-6 col-sm-12 mb-5" style="text-decoration: none;">
+                    <div class="card border-light mx-3" style="max-width: 20rem;">
+                        <div class="card-header">Face Recognition</div>
+                        <div class="card-body">
+                            <h4 class="card-title">Find Out Matched Faces Images</h4>
+                            <p class="card-text">Find Faces From Files With One Selected Face Image</p>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock content %}

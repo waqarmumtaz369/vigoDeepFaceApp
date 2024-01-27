@@ -1,0 +1,44 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="container" style="margin-bottom: 40px;">
+    <div class="row">
+        <div class="d-flex">
+            <div class="container p-3">
+                <h3>Results</h3>
+                {% if verified %}
+                <p>Both The Images are of a Same Person</p>
+                <h4 style="display: inline;">Difference:</h4> &nbsp; &nbsp; {{ difference }}
+                <br>
+                <h4 style="display: inline;">Matched:</h4> &nbsp; &nbsp; {{ verified }}
+                {% elif not verified %}
+                <p>Both The Images are <b>Not</b> of a Same Person</p>
+                <h4 style="display: inline;">Difference:</h4> &nbsp; &nbsp; {{ difference }}
+                <br>
+                <h4 style="display: inline;">Matched:</h4> &nbsp; &nbsp; {{ verified }}
+                {% endif %}
+            </div>
+            <div class="ms-4" style="width: 200px;">
+                <a href="{% url 'compare-images' %}" class="btn btn-secondary">Check Again <i
+                        class="fa-duotone fa-rotate-right"></i></a>
+            </div>
+        </div>
+        <br>
+        <div>
+            <h3 class="mt-2 text-center">Compared Images</h3>
+            <p class="text-center">These Images were Selected To Compare With Each Other</p>
+        </div>
+        <div class="d-lg-flex d-md-flex mb-3" style="justify-content: center; align-items: center; ">
+            <img src="{{ original_image1_path }}" style="border-radius: 15px;" class="me-3 img-fluid col-lg-4 col-md-6 col-sm-12"
+                alt="First Image" />
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <img src="{{ original_image2_path }}" style="border-radius: 14px" class="img-fluid "
+                    alt="Second Image" />
+            </div>
+        </div>
+        <br>
+
+
+    </div>
+</div>
+
+{% endblock content %}
